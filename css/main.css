@@ -1,0 +1,75 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.column {
+  overflow-y: hidden;
+}
+#container {
+  max-width: 100%;
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 4s ease;
+}
+
+.feed-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 100px;
+}
+
+#pop-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: 6px solid #383638;
+  width: 50%;
+  height: 200px;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.wrapper h1 {
+  margin: 0;
+  text-align: center;
+  font-family: GTEestiProDisplayTrial-Regular;
+  color: #E0A4A8;
+  font-size: 55px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+.wrapper p {
+  margin: 0;
+  font-family: GTEestiProDisplayTrial-Regular;
+  text-align: center;
+  color: #E0A4A8;
+  font-size: 36px;
+  margin-top: .25em;
+}
+
+
+/* Media Queries for Form */
+@media (max-width: 800px) {
+  #pop-up {
+    width: 90%;
+  }
+}
